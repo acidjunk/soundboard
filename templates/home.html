@@ -1,5 +1,4 @@
 {% load staticfiles %}
-{% load gravatar %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,37 +113,7 @@
         </div>
     </div>
 
-    <div class="ui segment">
-        <h2 class="ui center aligned icon header">
-          <i class="circular users icon"></i>
-          Popular boards
-        </h2>
-
-        <div class="ui link cards">
-            {% for i in "xxxxxxxxxxxxxxxxxxxx" %}
-                <div class="ui centered card">
-                    <div class="content">
-                        <img class="right floated mini ui image" src="{% gravatar_url 'acidjunk@gmail.com' 180 %}">
-                        <div class="header">
-                            Test board
-                        </div>
-                        <div class="meta">
-                            A board with 20 items
-                        </div>
-                        <div class="description">
-                            Just a simple test board with a couple of sounds
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="ui two buttons">
-                            <div class="ui basic green button">Show</div>
-                            <div class="ui basic red button">Vote</div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
+    {% block content %}{% endblock %}
 
     <div class="ui inverted vertical footer segment">
         <div class="ui container">

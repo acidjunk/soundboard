@@ -22,7 +22,7 @@
         $(document)
                 .ready(function () {
                     // fix menu when passed
-                    $('.masthead')
+                    $('.sticky')
                             .visibility({
                                 once: false,
                                 onBottomPassed: function () {
@@ -47,8 +47,8 @@
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
     <div class="ui container">
-        <a class="active item">Home</a>
-        <a class="item">Boards</a>
+        <a class="item">Home</a>
+        <a class="active item">Boards</a>
         <div class="right menu">
             <div class="item">
                 <a class="ui button">Log in</a>
@@ -62,108 +62,31 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
-    <a class="active item">Home</a>
-    <a class="item">Boards</a>
+    <a class="item">Home</a>
+    <a class="active item">Boards</a>
     <a class="item">Login</a>
     <a class="item">Signup</a>
 </div>
 
-
 <!-- Page Contents -->
 <div class="pusher">
-    <div class="ui inverted vertical masthead center aligned segment">
-
-        <div class="ui container">
-            <div class="ui large secondary inverted pointing menu">
-                <a class="toc item">
-                    <i class="sidebar icon"></i>
-                </a>
-                <a class="active item">Home</a>
-                <a class="item">Boards</a>
-                <div class="right item">
-                    <a class="ui inverted button">Log in</a>
-                    <a class="ui inverted button">Sign Up</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="ui text container">
-            <h1 class="ui inverted header">
-                SoundBoard
-            </h1>
-            <h2>Create and organise your own soundboard.</h2>
-            <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
-        </div>
-
-    </div>
-
-    <div class="ui vertical stripe quote segment">
-        <div class="ui equal width stackable internally celled grid">
-            <div class="center aligned row">
-                <div class="column">
-                    <h3>"Super Easy"</h3>
-                    <p>That is what they all say about us</p>
-                </div>
-                <div class="column">
-                    <h3>"It does it all"</h3>
-                    <p>
-                        Sounds, sounds and even more sounds
-                    </p>
-                </div>
+    <div class="sticky">
+        <div class="ui large inverted pointing menu">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="item">Home</a>
+            <a class="active item">Boards</a>
+            <div class="right item">
+                <a class="ui inverted button">Log in</a>
+                <a class="ui inverted button">Sign Up</a>
             </div>
         </div>
     </div>
 
-    <div class="ui segment">
-        <h2 class="ui center aligned icon header">
-          <i class="circular users icon"></i>
-          Popular boards
-        </h2>
+    {% block content %}{% endblock %}
 
-        <div class="ui link cards">
-            {% for i in "xxxxxxxxxxxxxxxxxxxx" %}
-                <div class="ui centered card">
-                    <div class="content">
-                        <img class="right floated mini ui image" src="{% gravatar_url 'acidjunk@gmail.com' 180 %}">
-                        <div class="header">
-                            Test board
-                        </div>
-                        <div class="meta">
-                            A board with 20 items
-                        </div>
-                        <div class="description">
-                            Just a simple test board with a couple of sounds
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="ui two buttons">
-                            <div class="ui basic green button">Show</div>
-                            <div class="ui basic red button">Vote</div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
 
-    <div class="ui inverted vertical footer segment">
-        <div class="ui container">
-            <div class="ui stackable inverted divided equal height stackable grid">
-                <div class="four wide column">
-                    <h4 class="ui inverted header">About</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">Sitemap</a>
-                        <a href="#" class="item">Contact Us</a>
-                        <a href="#" class="item">Privacy statement</a>
-                    </div>
-                </div>
-                <div class="twelve wide column">
-                    <h4 class="ui inverted header">Footer Header</h4>
-                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 </body>

@@ -1,4 +1,4 @@
-{% extends "home.html" %}
+{% extends "base.html" %}
 {% load gravatar %}
 
 {% block title %}Home{% endblock %}
@@ -6,21 +6,21 @@
 {% block content %}
 
     <div class="ui segment">
-        <h2 class="ui center aligned icon header">
-          <i class="circular users icon"></i>
-          Popular boards
+        <h2 class="ui icon header">
+          <i class="sound icon"></i>
+          Sound boards
         </h2>
 
         <div class="ui link cards">
-            {% for i in "xxxxxxxxxxxxxxxxxxxx" %}
+            {% for object in object_list %}
                 <div class="ui centered card">
                     <div class="content">
                         <img class="right floated mini ui image" src="{% gravatar_url 'acidjunk@gmail.com' 180 %}">
                         <div class="header">
-                            Test board
+                            {{ object.name }}
                         </div>
                         <div class="meta">
-                            A board with 20 items
+                            {{ object.description }}
                         </div>
                         <div class="description">
                             Just a simple test board with a couple of sounds
@@ -35,7 +35,6 @@
                 </div>
             {% endfor %}
         </div>
-
     </div>
 
 {% endblock %}
